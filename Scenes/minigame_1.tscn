@@ -1,19 +1,64 @@
-[gd_scene load_steps=7 format=3 uid="uid://bw2wakwpn2ydi"]
+[gd_scene load_steps=13 format=3 uid="uid://bw2wakwpn2ydi"]
 
 [ext_resource type="Texture2D" uid="uid://dh8suimwhr7a8" path="res://spideyBackgroundNone.png" id="1_enoba"]
 [ext_resource type="PackedScene" uid="uid://bxu6mb4b5awq4" path="res://Scenes/player.tscn" id="2_11mgy"]
+[ext_resource type="Texture2D" uid="uid://dy6aqkla0tr1m" path="res://spider-web_1f578-fe0f.png" id="3_f6tb2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_11mgy"]
 size = Vector2(1152, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f6tb2"]
-size = Vector2(400, 27)
+size = Vector2(400, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o6yob"]
-size = Vector2(396, 27)
+size = Vector2(396, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5txvl"]
-size = Vector2(426, 27)
+size = Vector2(426, 23)
+
+[sub_resource type="Animation" id="Animation_o6yob"]
+resource_name = "floating"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Web:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(843.99994, 528), Vector2(844, 518), Vector2(843.99994, 528)]
+}
+
+[sub_resource type="Animation" id="Animation_5txvl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Web:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(843.99994, 528)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0uv5o"]
+_data = {
+&"RESET": SubResource("Animation_5txvl"),
+&"floating": SubResource("Animation_o6yob")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0uv5o"]
+size = Vector2(22, 1350)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ojqsy"]
+size = Vector2(9, 1342)
 
 [node name="Minigame_1" type="Node2D"]
 
@@ -48,20 +93,20 @@ offset_bottom = 504.0
 color = Color(0, 0, 0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2"]
-position = Vector2(491, 490.5)
+position = Vector2(491, 493)
 shape = SubResource("RectangleShape2D_f6tb2")
 
 [node name="Platform3" type="StaticBody2D" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="Platform3"]
-offset_left = 706.0
-offset_top = 317.0
-offset_right = 1102.0
-offset_bottom = 347.0
+offset_left = 695.0
+offset_top = 295.0
+offset_right = 1091.0
+offset_bottom = 325.0
 color = Color(0, 0, 0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3"]
-position = Vector2(904, 333.5)
+position = Vector2(893, 313.5)
 shape = SubResource("RectangleShape2D_o6yob")
 
 [node name="Platform4" type="StaticBody2D" parent="."]
@@ -74,8 +119,35 @@ offset_bottom = 209.0
 color = Color(0, 0, 0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform4"]
-position = Vector2(314, 195.5)
+position = Vector2(314, 197.5)
 shape = SubResource("RectangleShape2D_5txvl")
 
 [node name="Player" parent="." instance=ExtResource("2_11mgy")]
 position = Vector2(70, 512)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Web" type="TextureRect" parent="Node2D"]
+offset_left = 843.99994
+offset_top = 528.0
+offset_right = 1084.0
+offset_bottom = 768.00024
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("3_f6tb2")
+
+[node name="animation" type="AnimationPlayer" parent="Node2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_0uv5o")
+}
+
+[node name="LeftWall" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
+position = Vector2(-11, -11)
+shape = SubResource("RectangleShape2D_0uv5o")
+
+[node name="RightWall" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
+position = Vector2(1156.5, -12)
+shape = SubResource("RectangleShape2D_ojqsy")
