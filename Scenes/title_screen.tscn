@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cybj2sx71okv1"]
 
-[ext_resource type="Texture2D" uid="uid://dqbaew6bxmucu" path="res://wp11058487.webp" id="1_klylv"]
 [ext_resource type="Script" uid="uid://bk78j1dmi5ukw" path="res://Scenes/title_screen.gd" id="1_p3fck"]
+[ext_resource type="Texture2D" uid="uid://cqxo28niii0d" path="res://Untitled.png" id="2_p3fck"]
 
 [node name="TitleScreen" type="Node2D"]
 script = ExtResource("1_p3fck")
@@ -11,7 +11,7 @@ offset_left = -1.0
 offset_top = -1.0
 offset_right = 1152.0
 offset_bottom = 648.0
-texture = ExtResource("1_klylv")
+texture = ExtResource("2_p3fck")
 
 [node name="Title" type="RichTextLabel" parent="."]
 clip_contents = false

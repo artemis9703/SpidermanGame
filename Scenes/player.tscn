@@ -3,19 +3,25 @@
 [ext_resource type="Script" uid="uid://dpb1mh3hymv3h" path="res://player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://io4txlgspoev" path="res://spiderman.png" id="2_6t5aa"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vgqql"]
-radius = 217.9954
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
+radius = 44.5
+height = 188.0
 
 [node name="Player" type="CharacterBody2D"]
+scale = Vector2(-1, 1)
 script = ExtResource("1_cvnsp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(13, 5.5)
+scale = Vector2(0.45, 0.45)
 texture = ExtResource("2_6t5aa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_vgqql")
+position = Vector2(10.5, 3)
+shape = SubResource("CapsuleShape2D_cvnsp")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_vgqql")
+position = Vector2(10.5, 3)
+shape = SubResource("CapsuleShape2D_cvnsp")

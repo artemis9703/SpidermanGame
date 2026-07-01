@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ce3mpotal26qt"]
 
 [ext_resource type="Script" uid="uid://q3q6mp7u3ptn" path="res://Scenes/timer_screen.gd" id="1_c7xwe"]
-[ext_resource type="Texture2D" uid="uid://dqbaew6bxmucu" path="res://wp11058487.webp" id="1_rol8n"]
+[ext_resource type="Texture2D" uid="uid://cqsj13d3ichcp" path="res://spideyBackgroundRight.png" id="2_c7xwe"]
 [ext_resource type="Texture2D" uid="uid://dy6aqkla0tr1m" path="res://spider-web_1f578-fe0f.png" id="2_cn3xy"]
 
 [node name="level_scene" type="Node2D"]
@@ -11,7 +11,7 @@ script = ExtResource("1_c7xwe")
 offset_left = -2.0
 offset_right = 1151.0
 offset_bottom = 648.0
-texture = ExtResource("1_rol8n")
+texture = ExtResource("2_c7xwe")
 
 [node name="LivesContainer" type="HBoxContainer" parent="."]
 offset_left = 210.0
@@ -41,17 +41,21 @@ layout_mode = 2
 texture = ExtResource("2_cn3xy")
 
 [node name="Level" type="RichTextLabel" parent="."]
-offset_left = 350.0
+clip_contents = false
+offset_left = 324.0
 offset_top = 460.0
 offset_right = 503.0
-offset_bottom = 520.0
-theme_override_font_sizes/normal_font_size = 42
+offset_bottom = 531.0
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 50
 text = "Level #"
 
 [node name="Timer" type="RichTextLabel" parent="."]
+clip_contents = false
 offset_left = 700.0
 offset_top = 460.0
-offset_right = 764.0
-offset_bottom = 519.0
-theme_override_font_sizes/normal_font_size = 42
+offset_right = 781.0
+offset_bottom = 534.0
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 50
 text = "0.0"
