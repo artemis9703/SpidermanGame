@@ -19,7 +19,7 @@ func _ready() -> void:
 	else:
 		get_tree().change_scene_to_file("res://Scenes/title_screen.tscn")
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	match Global.lives:
 		4:
 			life_5.hide()

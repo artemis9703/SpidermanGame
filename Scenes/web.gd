@@ -3,10 +3,10 @@ extends Node2D
 @onready var self_area = $Area2D
 @onready var player_area = $"../Player/Area2D"
 
-signal garlic_collected
+signal web_collected
 
-func _process(delta: float) -> void: # this runs EVERY FRAME! 
+func _process(_delta: float) -> void: # this runs EVERY FRAME! 
 	if player_area.overlaps_area(self_area):
 		if self.visible:
-			emit_signal("garlic_collected")
+			emit_signal("web_collected")
 			self.hide()

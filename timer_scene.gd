@@ -1,12 +1,12 @@
 extends Node2D
-@onready var  timer: RichTextLabel = $timer
+@onready var timer: RichTextLabel = $timer
 
 var time : float
 
 func _ready() -> void:
 	pass
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	timer.text = str(snapped(time, 0.10))
 
 func Timer(start_time: float):
