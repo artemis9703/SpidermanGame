@@ -12,6 +12,7 @@ script = ExtResource("1_rfxq2")
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 1153.0
 offset_bottom = 649.0
+mouse_filter = 2
 texture = ExtResource("1_l4g8r")
 
 [node name="Button_1" type="TextureButton" parent="."]
@@ -20,6 +21,7 @@ offset_top = 274.0
 offset_right = 793.0
 offset_bottom = 514.0
 scale = Vector2(0.6, 0.6)
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("2_dfb65")
 script = ExtResource("3_rfxq2")
 
@@ -29,6 +31,7 @@ offset_top = 347.0
 offset_right = 627.0
 offset_bottom = 587.0
 scale = Vector2(0.6, 0.6)
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("2_dfb65")
 script = ExtResource("3_rfxq2")
 
@@ -38,6 +41,7 @@ offset_top = 123.0
 offset_right = 916.0
 offset_bottom = 363.0
 scale = Vector2(0.6, 0.6)
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("2_dfb65")
 script = ExtResource("3_rfxq2")
 
@@ -47,6 +51,7 @@ offset_top = 420.0
 offset_right = 1174.0
 offset_bottom = 660.0
 scale = Vector2(0.6, 0.6)
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("2_dfb65")
 script = ExtResource("3_rfxq2")
 
@@ -55,6 +60,7 @@ script = ExtResource("3_rfxq2")
 [node name="timer2" type="RichTextLabel" parent="ThemedTimer"]
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Button_1" to="." method="_on_pressed"]

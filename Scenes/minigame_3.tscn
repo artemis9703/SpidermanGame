@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dw05xrdp6o2b1"]
+
+[ext_resource type="Texture2D" uid="uid://dh8suimwhr7a8" path="res://spideyBackgroundNone.png" id="1_asmx3"]
+
+[node name="Minigame_3" type="Node2D"]
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+repeat_size = Vector2(1153, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="Background" type="TextureRect" parent="Parallax2D"]
+offset_right = 1153.0
+offset_bottom = 649.0
+texture = ExtResource("1_asmx3")
